@@ -1,0 +1,129 @@
+#topbit
+{
+	background :black;
+	height: 4rem;
+	
+	font-family: Calibri;
+	font-weight: bold;
+}
+
+#sidebit
+{
+	background :black;
+	width: 5rem;
+	height: 12rem;
+	float: right;
+	font-family: Calibri;
+	font-weight: bold;
+	text-align: center;
+}
+
+.footer
+{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+body
+{
+	background-color: grey;
+}
+
+img
+{
+	border-width: 5px;
+	border-style: solid;
+	border-color: black;
+}
+
+#cvtext
+{
+	color: black;
+	font-size: 20;
+}
+
+#right 
+{
+  position: absolute;
+  right: 140px;
+  height: 202px;
+  width: 850px;
+  top: 75px;
+  float: right;
+  font-size: 20;
+  font-family: Calibri;
+}
+
+video
+{
+	width: 320;
+	height: 240;
+}
+
+#videoright
+{
+	float: left;
+	width: 300px;
+	margin-left: 400px;
+}
+
+#videoleft
+{
+	float: left;
+	width: 300px;
+}
+
+.contactImage
+{
+	display: block; 
+	width: 100px; 
+	height: 100px; 
+	float: left;
+	margin-left: 50px;
+	margin-right: 20px;
+	margin-top: 30px;
+}
+
+.rowContainer
+{
+	display: flex; 
+	flex-direction: column;
+}
+
+.videoparagraphleft
+{
+	float: left; 
+	margin-left: 40px; 
+	margin-top: 75px;
+	font-size: 15;
+	font-family: Calibri;
+	text-align: left;
+	background-color: white;
+}
+
+.videoparagraphright
+{
+	float: right; 
+	margin-right: 90px; 
+	margin-top: 75px;
+	font-size: 15;
+	font-family: Calibri;
+	text-align: left;
+	background-color: white;
+}
+
+.videoparagraphrightbroken
+{
+	float: right; 
+	margin-right: -10px; 
+	margin-top: 75px;
+	font-size: 15;
+	font-family: Calibri;
+	text-align: left;
+	background-color: white;
+}

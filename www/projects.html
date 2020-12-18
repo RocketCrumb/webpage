@@ -1,0 +1,125 @@
+<html>
+
+	<head>
+		<title>Projects</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	
+	<body>
+
+	<div id="topbit">
+		
+		<div style="float: left">
+			<br><a style="text-decoration: none; color: white"; href="index.html"> &emsp; Home</a> &emsp; &emsp; <a style="text-decoration: none; color: white"; href="contact.html">Contact</a> &emsp; &emsp; <a style="text-decoration: none; color: white"; href="cv.html">CV</a> &emsp; &emsp; <a style="text-decoration: none; color: white"; href="projects.html">Projects</a>
+		</div>
+	</div>
+	
+	<div id="sidebit">
+		
+		<div style="float: center">
+			<p> <br> <a style="text-decoration: none; color: white" ; href="models.html">Models (Work In Progress)</a> <p> <br>
+			<a style="text-decoration: none; color: white" ; href="films.html">Films</a> <p> <br>
+		</div>
+	
+	</div>
+		
+	<canvas id="canvas" style="background: green"></canvas>
+		
+		<br>
+	
+			<script>
+			var x = 10;
+			var y = 10;
+			var playerImage;
+			var frameNumber = 0;
+
+			function load()
+			{
+				// set up playerImage variable
+				playerImage = new Image();
+				
+				//load the image file we want into that image variable
+				playerImage.src = "Images/player.png";
+			}
+		
+			function main()
+			{
+				// call the load function
+				load();
+			
+				// get reference to thing with id of canvas
+				var canvas = document.getElementById("canvas");
+				
+				// set canvas width and height
+				canvas.width = 1000;
+				canvas.height = 480;
+				
+				// create our context (like a pen to draw with)
+				var ctx = canvas.getContext ("2d");
+				
+				// call our draw function
+				draw(ctx);
+			}
+			
+			function draw(ctx)
+			{
+				// set the pen to green, draw big rectangle
+				ctx.fillStyle = "green";
+				ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+				
+				// set pen colour to red
+				//(uncomment this to make it work as a red square) ctx.fillStyle = "red";
+				
+				var frameWidth = playerImage.width / 5;
+				var frameHeight = playerImage.height / 4;
+				
+				// set pen to the image
+				ctx.drawImage(playerImage,
+				frameNumber * frameWidth, 0, 			// where (x,y) in src image to draw from				
+				frameWidth, frameHeight, 				// how much (w, h) of src image to draw
+				x, y, 								// where on canvas to start drawing (x, y)
+				200, 200);								// how big to draw on canvas (w, h)
+				
+				// do a drawing of some rectangle
+				//(uncomment this to make it work as a red square) ctx.fillRect(x, 10, 100, 100);
+				//(uncomment this to make it work as a red square) x++;
+				
+				frameNumber++;
+				
+				if (frameNumber > 4)
+				{
+					frameNumber = 0;
+				}
+				
+				// call this draw function every frame
+				window.requestAnimationFrame(function(){draw(ctx);});
+			}
+			
+			function keydown(event)
+			{
+				if(event.key == "a")
+				{
+					x -= 5;
+				}
+				else if(event.key == "d")
+				{
+					x += 5;
+				}
+				if(event.key == "w")
+				{
+					y -= 5;
+				}
+				else if(event.key == "s")
+				{
+					y += 5;
+				}
+			}
+			
+			window.onload = main;
+			window.addEventListener("keydown", keydown);
+			
+		</script>
+	
+	</body>
+
+</html>
